@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Floyd’s Barber Shop — Sylvania, OH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Classic cuts, fades, and beard trims in Sylvania. Book online or call today.">
+  <link rel="icon" href="/assets/favicon.svg">
+  <link rel="preload" as="image" href="/assets/hero.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- Top Bar -->
+  <header class="top">
+    <div class="wrap">
+      <a href="tel:+1-419-555-0123">Call: (419) 555-0123</a>
+      <span class="sep">•</span>
+      <span>123 Main St, Sylvania, OH</span>
+      <span class="sep">•</span>
+      <span>Open: Tue–Sat</span>
+    </div>
+  </header>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#home">
+        <img src="/assets/floyds-logo.png" alt="Floyd's logo" onerror="this.style.display='none'">
+        <strong>Floyd’s Barber Shop</strong>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#prices">Prices</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#hours">Hours</a>
+        <a class="btn" href="#book">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="overlay"></div>
+    <div class="wrap hero-inner">
+      <h1>Classic Cuts. Sharp Fades. Local Vibe.</h1>
+      <p>Walk-ins welcome. Book ahead to skip the wait.</p>
+      <div class="cta">
+        <a class="btn" href="#book">Book a Cut</a>
+        <a class="btn ghost" href="tel:+1-419-555-0123">Call (419) 555-0123</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust badges -->
+  <section class="wrap badges">
+    <div class="badge">💈 20+ Years Local</div>
+    <div class="badge">⭐ 4.8/5 Community Rated</div>
+    <div class="badge">🚀 Same-Day Slots</div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="wrap section">
+    <h2>Services</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>Classic Cut</h3>
+        <p>Clean, timeless cut finished with hot lather neck shave.</p>
+      </article>
+      <article class="card">
+        <h3>Skin & Drop Fades</h3>
+        <p>Precision fades, tapers, and modern styles that pop.</p>
+      </article>
+      <article class="card">
+        <h3>Beard Trim & Line-Up</h3>
+        <p>Crisp lines, shape, and hot towel treatment.</p>
+      </article>
+      <article class="card">
+        <h3>Kids Cut</h3>
+        <p>Patient barbers and fresh styles for the little ones.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Prices -->
+  <section id="prices" class="section alt">
+    <div class="wrap">
+      <h2>Prices</h2>
+      <div class="price-grid">
+        <div class="price-card">
+          <h3>Classic Cut</h3>
+          <div class="price">$25</div>
+          <p class="muted">30 minutes</p>
+        </div>
+        <div class="price-card">
+          <h3>Fade / Skin Fade</h3>
+          <div class="price">$30</div>
+          <p class="muted">45 minutes</p>
+        </div>
+        <div class="price-card">
+          <h3>Beard Trim + Line</h3>
+          <div class="price">$15</div>
+          <p class="muted">15–20 minutes</p>
+        </div>
+        <div class="price-card">
+          <h3>Cut + Beard</h3>
+          <div class="price">$40</div>
+          <p class="muted">45–60 minutes</p>
+        </div>
+        <div class="price-card">
+          <h3>Kids Cut</h3>
+          <div class="price">$20</div>
+          <p class="muted">30 minutes</p>
+        </div>
+      </div>
+      <p class="center tiny muted">*Prices are demo placeholders for mockup*</p>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="wrap section">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="/assets/gallery-1.jpg" alt="Fade example" onerror="this.src='/assets/hero.jpg'">
+      <img src="/assets/gallery-2.jpg" alt="Classic cut" onerror="this.src='/assets/hero.jpg'">
+      <img src="/assets/gallery-3.jpg" alt="Beard line up" onerror="this.src='/assets/hero.jpg'">
+    </div>
+  </section>
+
+  <!-- Hours & Map -->
+  <section id="hours" class="section alt">
+    <div class="wrap grid">
+      <div>
+        <h2>Hours</h2>
+        <ul class="hours">
+          <li>Mon: Closed</li>
+          <li>Tue–Fri: 9:00 AM – 6:00 PM</li>
+          <li>Sat: 9:00 AM – 3:00 PM</li>
+          <li>Sun: Closed</li>
+        </ul>
+        <p class="muted">Walk-ins welcome • Book to skip the wait</p>
+      </div>
+      <div>
+        <h2>Find Us</h2>
+        <p>123 Main St, Sylvania, OH</p>
+        <a class="btn small" target="_blank" href="https://www.google.com/maps/search/?api=1&query=123+Main+St+Sylvania+OH">Open in Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section id="book" class="wrap section">
+    <h2>Book Now</h2>
+    <form class="book" action="https://formspree.io/f/your-id-here" method="POST">
+      <div class="grid2">
+        <input name="name" required placeholder="Full name">
+        <input name="phone" required placeholder="Phone">
+      </div>
+      <div class="grid2">
+        <select name="service" required>
+          <option value="">Select a service…</option>
+          <option>Classic Cut</option>
+          <option>Fade / Skin Fade</option>
+          <option>Beard Trim + Line</option>
+          <option>Cut + Beard</option>
+          <option>Kids Cut</option>
+        </select>
+        <input type="date" name="date" required>
+      </div>
+      <textarea name="notes" rows="3" placeholder="Notes (optional)"></textarea>
+      <button class="btn" type="submit">Request Appointment</button>
+      <p class="tiny muted">We’ll confirm by text or call.</p>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <h3>Floyd’s Barber Shop</h3>
+          <p>Classic barbershop in Sylvania. Sharp cuts, clean fades, good vibes.</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p><a href="tel:+1-419-555-0123">(419) 555-0123</a><br>
+          <a href="mailto:info@floydsbarbershop.com">info@floydsbarbershop.com</a></p>
+        </div>
+        <div>
+          <h4>Hours</h4>
+          <p>Tue–Fri 9–6 • Sat 9–3</p>
+        </div>
+      </div>
+      <div class="copy">© <span id="y"></span> Floyd’s Barber Shop • Mockup by LCJ Web & AI</div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
