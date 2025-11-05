@@ -1,0 +1,111 @@
+import React, { useMemo, useState } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Calendar, Car, Check, Clock, MapPin, Phone, ShieldCheck, Sparkles, Star, SunMoon } from "lucide-react";
+
+// TintLab419 Mockup with true black/red gradient background
+
+export default function TintLab419Pro() {
+  const [submitted, setSubmitted] = useState(false);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setSubmitted(true);
+  }
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-black via-neutral-950 to-black text-white">
+      {/* NAVBAR */}
+      <header className="sticky top-0 z-50 bg-black/80 backdrop-blur border-b border-red-700">
+        <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
+          <h1 className="text-2xl font-bold text-red-500">TintLab419</h1>
+          <nav className="hidden md:flex space-x-6">
+            <a href="#services" className="hover:text-red-400">Services</a>
+            <a href="#book" className="hover:text-red-400">Book</a>
+            <a href="#contact" className="hover:text-red-400">Contact</a>
+          </nav>
+          <Button asChild className="bg-red-600 hover:bg-red-700 text-white font-semibold">
+            <a href="#book">Book Now</a>
+          </Button>
+        </div>
+      </header>
+
+      {/* HERO SECTION */}
+      <section className="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto py-20 px-6">
+        <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.6}}>
+          <h2 className="text-5xl font-black leading-tight">
+            <span className="text-white">Sleek </span>
+            <span className="text-red-500">Window Tinting</span>
+          </h2>
+          <p className="mt-4 text-neutral-300 text-lg max-w-lg">
+            Professional automotive tinting in Sylvania. Stay cool, look sharp, and protect your ride with premium films.
+          </p>
+          <div className="mt-6 flex gap-3">
+            <Button asChild className="bg-red-600 hover:bg-red-700 text-white font-bold">
+              <a href="#book">Book Appointment</a>
+            </Button>
+            <Button asChild variant="outline" className="border-red-600 text-red-400 hover:bg-red-700/20">
+              <a href="https://www.google.com/maps/search/?api=1&query=TintLab419+Sylvania+OH" target="_blank" rel="noreferrer">
+                <MapPin className="mr-2 h-4 w-4" /> Get Directions
+              </a>
+            </Button>
+          </div>
+        </motion.div>
+        <motion.img
+          initial={{opacity:0, x:30}} animate={{opacity:1, x:0}} transition={{duration:0.6, delay:0.2}}
+          src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop"
+          alt="Tinted car"
+          className="rounded-3xl shadow-[0_0_40px_-10px_rgba(255,0,0,0.7)] w-full md:w-1/2 mt-10 md:mt-0"
+        />
+      </section>
+
+      {/* SERVICES */}
+      <section id="services" className="max-w-7xl mx-auto px-6 py-16">
+        <h3 className="text-3xl font-extrabold text-center mb-10">
+          Our <span className="text-red-500">Services</span>
+        </h3>
+        <div className="grid md:grid-cols-3 gap-6">
+          {["Ceramic Tint","Full Vehicle","Front Window Match"].map((service, i) => (
+            <Card key={i} className="bg-neutral-900 border border-red-800/40 hover:border-red-600 transition">
+              <CardHeader>
+                <CardTitle className="text-white font-bold text-xl">{service}</CardTitle>
+              </CardHeader>
+              <CardContent className="text-neutral-300">Professional {service.toLowerCase()} installation for enhanced style and comfort.</CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* BOOKING SECTION */}
+      <section id="book" className="max-w-3xl mx-auto px-6 py-20">
+        <h3 className="text-3xl font-extrabold text-center mb-8">
+          Book <span className="text-red-500">Now</span>
+        </h3>
+        <form onSubmit={handleSubmit} className="space-y-4 bg-neutral-900 p-8 rounded-2xl border border-red-800 shadow-[0_0_40px_-15px_rgba(255,0,0,0.6)]">
+          <Input required placeholder="Full Name" className="bg-black border-neutral-700 text-white focus-visible:ring-red-600" />
+          <Input required type="tel" placeholder="Phone Number" className="bg-black border-neutral-700 text-white focus-visible:ring-red-600" />
+          <Textarea placeholder="Car Make/Model and preferred tint package" className="bg-black border-neutral-700 text-white focus-visible:ring-red-600 min-h-[100px]" />
+          <Button type="submit" className="bg-red-600 hover:bg-red-700 text-white font-bold w-full py-6">Submit Booking</Button>
+        </form>
+        {submitted && (
+          <p className="mt-4 text-center text-green-400 font-semibold">Thanks! We'll contact you soon to confirm your appointment.</p>
+        )}
+      </section>
+
+      {/* CONTACT */}
+      <footer id="contact" className="bg-black border-t border-red-800 py-10 text-center">
+        <h4 className="text-xl font-bold text-red-500">Visit Us</h4>
+        <p className="text-neutral-400">Sylvania, OH</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=TintLab419+Sylvania+OH" target="_blank" rel="noreferrer" className="text-red-400 hover:underline">
+          Get Directions
+        </a>
+        <p className="text-neutral-500 mt-4">© {new Date().getFullYear()} TintLab419. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+}
