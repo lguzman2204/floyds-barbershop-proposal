@@ -1,0 +1,149 @@
+import { useState } from "react";
+
+export default function SportsCutBarbershop() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [service, setService] = useState("Haircut & Style");
+
+  const services = [
+    { title: "Haircut & Style", price: 30, time: "30–45 min", desc: "Classic cut, taper or fade, finished with style." },
+    { title: "Skin Fade", price: 35, time: "45 min", desc: "Zero‑gap precision fade with clean finish." },
+    { title: "Beard Trim & Line‑Up", price: 18, time: "15–20 min", desc: "Detailed beard shape with razor line‑up." },
+    { title: "Kids Cut (12 & under)", price: 22, time: "30 min", desc: "Gentle, patient service for young athletes." },
+    { title: "Hot Towel Shave", price: 28, time: "25–30 min", desc: "Steamed towel, lather, razor, balm finish." },
+    { title: "Cut + Beard Combo", price: 45, time: "60 min", desc: "Full refresh — hair & beard dialed in." },
+  ];
+
+  const hours = [
+    { d: "Mon", h: "10:00a – 6:00p" },
+    { d: "Tue", h: "10:00a – 6:00p" },
+    { d: "Wed", h: "10:00a – 6:00p" },
+    { d: "Thu", h: "10:00a – 7:00p" },
+    { d: "Fri", h: "10:00a – 7:00p" },
+    { d: "Sat", h: "9:00a – 5:00p" },
+    { d: "Sun", h: "Closed" },
+  ];
+
+  const handleRequest = (e) => {
+    e.preventDefault();
+    const msg = encodeURIComponent(
+      `Hi Sports Cut — I'm ${name || "[Your Name]"}. I'd like to book a ${service}. My number is ${phone || "[Your Phone]"}.`
+    );
+    const smsHref = `sms:+14195550123?&body=${msg}`;
+    const mailHref = `mailto:book@sportscuttoledo.com?subject=Booking%20Request&body=${msg}`;
+
+    const a = document.createElement("a");
+    a.href = /Mobi|Android/i.test(navigator.userAgent) ? smsHref : mailHref;
+    a.click();
+  };
+
+  const mapsUrl = "https://www.google.com/maps/dir/?api=1&destination=3307+N+Holland+Sylvania+Rd,+Toledo,+OH+43615";
+
+  return (
+    <div className="min-h-screen bg-neutral-50 text-neutral-900">
+      <header className="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-neutral-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-2xl bg-black grid place-items-center text-white font-bold">SC</div>
+            <div>
+              <h1 className="text-lg font-semibold tracking-tight">Sports Cut Barbershop</h1>
+              <p className="text-xs text-neutral-500">Toledo, Ohio</p>
+            </div>
+          </div>
+          <nav className="hidden md:flex items-center gap-6 text-sm">
+            <a href="#services" className="hover:text-black/70">Services</a>
+            <a href="#team" className="hover:text-black/70">Barbers</a>
+            <a href="#gallery" className="hover:text-black/70">Gallery</a>
+            <a href="#book" className="hover:text-black/70">Book</a>
+            <a href="#visit" className="hover:text-black/70">Visit</a>
+          </nav>
+          <div className="flex items-center gap-2">
+            <a
+              href={mapsUrl}
+              className="hidden sm:inline-block px-3 py-2 rounded-xl border border-neutral-300 text-sm hover:bg-neutral-100"
+              target="_blank" rel="noopener noreferrer"
+            >Directions</a>
+            <a
+              href="tel:+14195550123"
+              className="px-4 py-2 rounded-xl bg-black text-white text-sm font-medium shadow-sm hover:opacity-90"
+            >Call</a>
+          </div>
+        </div>
+      </header>
+
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,#f4f4f5,transparent_40%),radial-gradient(circle_at_70%_60%,#e5e5e5,transparent_40%)]" />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 relative">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <span className="inline-block text-xs tracking-widest uppercase text-neutral-500">Game‑Ready Grooming</span>
+              <h2 className="mt-3 text-4xl sm:text-5xl font-extrabold leading-tight">Sharp cuts. Clean fades. <span className="underline decoration-4 decoration-black">Every time.</span></h2>
+              <p className="mt-4 text-neutral-600 max-w-prose">Local barbers who treat every client like an MVP. Book on theCut or message us for a quick slot. Walk‑ins welcome when the bench is clear.</p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a href="#book" className="px-5 py-3 rounded-2xl bg-black text-white font-medium hover:opacity-90">Book a Cut</a>
+                <a href={mapsUrl} target="_blank" rel="noopener noreferrer" className="px-5 py-3 rounded-2xl border border-neutral-300 hover:bg-neutral-100">Find Us</a>
+              </div>
+              <div className="mt-6 flex items-center gap-4 text-sm text-neutral-600">
+                <div className="flex -space-x-2">
+                  {[1,2,3,4,5].map((i) => (
+                    <div key={i} className="w-8 h-8 rounded-full ring-2 ring-white bg-neutral-200" />
+                  ))}
+                </div>
+                <span>Over 500 happy clients • 4.9/5 rating</span>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl bg-neutral-200">
+                <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop" alt="Crisp fade at Sports Cut Barbershop" className="w-full h-full object-cover" />
+              </div>
+              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-lg p-4 w-64">
+                <p className="text-sm font-semibold">This week’s special</p>
+                <p className="text-sm text-neutral-600">Cut + Beard Combo</p>
+                <p className="text-xl font-bold mt-1">$45</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="book" className="py-16 bg-neutral-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-10 items-start">
+            <div>
+              <h3 className="text-3xl font-bold">Book a Cut</h3>
+              <form onSubmit={handleRequest} className="mt-8 grid grid-cols-1 gap-4 max-w-lg">
+                <div>
+                  <label className="text-sm font-medium">Your Name</label>
+                  <input value={name} onChange={(e) => setName(e.target.value)} className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-neutral-800" placeholder="Jordan" />
+                </div>
+                <div>
+                  <label className="text-sm font-medium">Phone</label>
+                  <input value={phone} onChange={(e) => setPhone(e.target.value)} className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2" placeholder="(419) 555‑0123" />
+                </div>
+                <div>
+                  <label className="text-sm font-medium">Service</label>
+                  <select value={service} onChange={(e) => setService(e.target.value)} className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2">
+                    {services.map((s) => (<option key={s.title}>{s.title}</option>))}
+                  </select>
+                </div>
+                <button type="submit" className="mt-2 px-5 py-3 rounded-2xl bg-black text-white font-medium">Send Request</button>
+              </form>
+            </div>
+            <div className="rounded-3xl border border-neutral-200 bg-white p-6">
+              <div className="aspect-video rounded-2xl overflow-hidden bg-neutral-200">
+                <iframe title="Map to Sports Cut Barbershop Toledo" className="w-full h-full" loading="lazy" referrerPolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=3307+N+Holland+Sylvania+Rd,+Toledo,+OH+43615&output=embed" />
+              </div>
+              <div className="mt-5">
+                <h4 className="font-semibold">Visit Us</h4>
+                <p className="text-sm text-neutral-600 mt-1">3307 N Holland Sylvania Rd, Toledo, OH 43615</p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  <a href={mapsUrl} target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-xl border border-neutral-300 text-sm">Get Directions</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
