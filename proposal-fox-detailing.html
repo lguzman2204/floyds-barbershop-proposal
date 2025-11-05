@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Proposal for Fox Auto Detailing — LCJ Web & AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Website + AI receptionist proposal for Fox Auto Detailing (Sylvania).">
+  <link rel="icon" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .hero-prop{position:relative;border-radius:16px;padding:32px;background:linear-gradient(145deg,#2563EB 0%,#0EA5E9 50%,#10B981 100%);box-shadow:0 8px 28px rgba(0,0,0,.35)}
+    .pill{display:inline-block;padding:6px 12px;border:1px solid var(--border);border-radius:999px;margin-right:8px;color:var(--muted)}
+    .muted{color:var(--muted)}
+    .grid-2x1{display:grid;grid-template-columns:2fr 1fr;gap:18px}
+    @media (max-width:900px){.grid-2x1{grid-template-columns:1fr}}
+    .num{font-size:28px;font-weight:800}
+    .ul-clean{list-style:none;padding:0;margin:0}
+    .ul-clean li{margin:8px 0}
+    .check{display:inline-block;width:16px;height:16px;background:#10B981;border-radius:4px;margin-right:8px}
+    .card{background-color:rgba(17,24,39,.92);border:1px solid var(--border);border-radius:16px;padding:20px}
+    .cta{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+    .btn{background:linear-gradient(90deg,#2563EB,#0EA5E9);padding:10px 16px;border-radius:10px;color:#fff;font-weight:700}
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,.25)}
+  </style>
+  <script defer>
+    document.addEventListener('DOMContentLoaded',()=>{const v=id=>document.getElementById(id),fmt=n=>'$'+Number(n).toLocaleString();const calc=()=>{const avg=+v('avg').value||0,leads=+v('leads').value||0,cap=(+v('cap').value||0)/100,conv=(+v('conv').value||0)/100,ai=+v('ai').value||149,add=Math.round(leads*cap*conv*avg);v('addrev').textContent=fmt(add);v('net').textContent=fmt(add-ai)};['avg','leads','cap','conv','ai'].forEach(id=>v(id).addEventListener('input',calc));calc();});
+  </script>
+</head>
+<body>
+<header class="site">
+  <div class="container nav">
+    <a href="/" class="brand"><img src="/assets/logo.svg" alt="" style="height:40px"><strong>LCJ Web & AI</strong></a>
+    <nav><a data-nav href="/">Home</a><a data-nav href="/services.html">Services</a><a data-nav href="/pricing.html">Pricing</a><a data-nav href="/contact.html">Contact</a></nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero-prop card">
+    <h1 style="margin:0">Proposal for Fox Auto Detailing</h1>
+    <p class="muted" style="margin:6px 0 0">Sylvania, OH • Website + 24/7 AI receptionist</p>
+    <div style="margin-top:10px">
+      <span class="pill">Before/After Gallery</span>
+      <span class="pill">Packages & Online Quotes</span>
+      <span class="pill">Text-to-Book</span>
+    </div>
+  </section>
+
+  <section class="grid-2x1" style="margin-top:18px">
+    <div class="card">
+      <h2>Why this helps Fox</h2>
+      <p class="lead">Detailing is visual. A fast site with a bold gallery + clear packages converts browsers into bookings.</p>
+      <ul class="ul-clean">
+        <li><span class="check"></span>Packages: Interior, Exterior, Full, Ceramic</li>
+        <li><span class="check"></span>Instant “Text for Quote” + Google Reviews</li>
+        <li><span class="check"></span>AI receptionist replies to missed calls & books slots</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>At-a-glance</h3>
+      <table class="table">
+        <tr><td>Timeline</td><td><strong>~1 week</strong> after content</td></tr>
+        <tr><td>Pages</td><td>Home, Packages, Gallery, Contact</td></tr>
+        <tr><td>Hosting</td><td>Cloudflare Pages (free)</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="card" style="margin-top:18px">
+    <h2>Estimated monthly impact</h2>
+    <div class="grid-2">
+      <div>
+        <label>Avg ticket ($)</label><input id="avg" type="number" value="180">
+        <label>Inbound inquiries / month</label><input id="leads" type="number" value="120">
+        <label>After-hours/AI capture (%)</label><input id="cap" type="number" value="30">
+        <label>Close rate (%)</label><input id="conv" type="number" value="40">
+        <label>AI monthly fee ($)</label><input id="ai" type="number" value="149">
+      </div>
+      <div>
+        <p class="lead">Additional monthly revenue:</p><p class="num" id="addrev">$0</p>
+        <p class="lead">Net after AI fee:</p><p class="num" id="net">$0</p>
+        <small class="muted">Illustrative only — final quote after discovery.</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" style="margin-top:18px">
+    <h2>Timeline & Investment</h2>
+    <ul class="ul-clean">
+      <li><span class="check"></span>One-time site build: <strong>$399–$799</strong></li>
+      <li><span class="check"></span>AI receptionist: <strong>$149/mo</strong></li>
+      <li><span class="check"></span>Launch in ~1 week after content</li>
+    </ul>
+  </section>
+
+  <section class="card" style="margin-top:18px">
+    <div class="cta">
+      <div><h2>Ready to move forward?</h2><p class="muted">We’ll tailor copy, colors, and gallery to Fox’s brand.</p></div>
+      <div><a class="btn" href="/contact.html">Book a 10-min call</a><a class="btn ghost" href="mailto:lguzman2204@gmail.com">Email Luis</a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="container"><div class="cta"><small class="muted">© <span id="y"></span> LCJ Web & AI</small></div></footer>
+<script>document.getElementById("y").textContent=new Date().getFullYear()</script>
+</body>
+</html>
