@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Client Proposals — LCJ Web & AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    body { background:#0f172a; color:#fff; font-family:'Montserrat',sans-serif; }
+    main { max-width:800px; margin:auto; padding:60px 20px; text-align:center; }
+    h1 { font-family:'Bebas Neue',sans-serif; letter-spacing:1px; font-size:2.6rem; margin-bottom:10px; }
+    p { color:rgba(255,255,255,.7); margin-bottom:40px; }
+    ul { list-style:none; padding:0; display:grid; gap:20px; }
+    li { background:rgba(255,255,255,.05); padding:25px; border-radius:12px; transition:all .2s; }
+    li:hover { background:rgba(255,255,255,.1); transform:translateY(-3px); }
+    a { color:#38bdf8; font-weight:600; text-decoration:none; }
+    small { display:block; margin-top:30px; color:rgba(255,255,255,.5); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Client Proposals</h1>
+    <p>Quick demos and mockups created by LCJ Web & AI for local Sylvania businesses.</p>
+
+    <ul>
+      <li><a href="/proposal-floyds.html">💈 Floyd’s Barber Shop</a><br><small>Barbershop website & AI booking</small></li>
+      <li><a href="/proposal-fox-detailing.html">🚗 Fox Auto Detailing</a><br><small>Gallery-driven site + text-to-book</small></li>
+      <li><a href="/proposal-4paws.html">🐾 4Paws Spa</a><br><small>Pet grooming site with AI confirmations</small></li>
+      <li><a href="/proposal-glasscity-landscape.html">🌿 Glass City Lawn & Landscape</a><br><small>Seasonal services + quote automation</small></li>
+    </ul>
+
+    <small>© <span id="y"></span> LCJ Web & AI — Created by Luis Guzman</small>
+  </main>
+  <script>document.getElementById("y").textContent=new Date().getFullYear()</script>
+</body>
+</html>
